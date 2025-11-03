@@ -50,6 +50,46 @@
             bindings = <&hold_tap_combo RS(RIGHT_BRACKET) RA(NUMBER_2)>;
             key-positions = <17 29>;
         };
+
+        combo_left_parenthesis_brace {
+            bindings = <&hold_tap_combo RA(RS(NUMBER_8)) RS(NUMBER_8)>;
+            key-positions = <7 19>;
+        };
+
+        combo_left_bracket_lesser {
+            bindings = <&hold_tap_combo GRAVE RA(NUMBER_8)>;
+            key-positions = <19 31>;
+        };
+
+        combo_right_parenthesis_brace {
+            bindings = <&hold_tap_combo RA(RS(NUMBER_9)) RS(NUMBER_9)>;
+            key-positions = <8 20>;
+        };
+
+        combo_right_bracket_greater {
+            bindings = <&hold_tap_combo RS(GRAVE) RA(NUMBER_9)>;
+            key-positions = <20 32>;
+        };
+
+        combo_apostrophe_quote {
+            bindings = <&hold_tap_combo RS(NUMBER_2) BACKSLASH>;
+            key-positions = <9 21>;
+        };
+
+        combo_ampersand_percentage {
+            bindings = <&hold_tap_combo RS(NUMBER_5) RS(NUMBER_6)>;
+            key-positions = <21 33>;
+        };
+
+        combo_colon_semicolon {
+            bindings = <&hold_tap_combo RS(COMMA) RS(PERIOD)>;
+            key-positions = <6 18>;
+        };
+
+        combo_tilde_pipe {
+            bindings = <&hold_tap_combo RA(NUMBER_7) RA(RIGHT_BRACKET)>;
+            key-positions = <18 30>;
+        };
     };
 
     behaviors {
@@ -77,10 +117,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp ESCAPE     &kp Z  &kp G     &kp B  &kp X        &kp W    &kp V  &kp P     &kp Q  &kp LEFT_BRACKET  &none
-&none  &kp A          &kp E  &kp R     &kp T  &kp F        &kp M    &kp S  &kp N     &kp I  &kp O             &none
-&none  &kp SEMICOLON  &kp U  &kp H     &kp L  &kp D        &kp C    &kp J  &kp K     &kp Y  &kp APOSTROPHE    &none
-                             &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 0  &kp RALT
+&none  &kp ESCAPE     &kp Z  &kp G  &kp B  &kp X          &kp W        &kp V  &kp P     &kp Q  &kp LEFT_BRACKET  &none
+&none  &kp A          &kp E  &kp R  &kp T  &kp F          &kp M        &kp S  &kp N     &kp I  &kp O             &none
+&none  &kp SEMICOLON  &kp U  &kp H  &kp L  &kp D          &kp C        &kp J  &kp K     &kp Y  &kp APOSTROPHE    &none
+                             &mo 3  &mo 2  &lt 1 SPACE    &lt 1 ENTER  &mo 0  &kp RALT
             >;
 
             label = "MacOS";
@@ -118,10 +158,10 @@
 
         function_layer {
             bindings = <
-&none  &none           &none         &none             &none         &none            &none  &kp F7  &kp F8  &kp F9  &kp F10  &none
-&none  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_GUI  &none            &none  &kp F4  &kp F5  &kp F6  &kp F11  &none
-&none  &none           &kp LG(X)     &kp LG(C)         &kp LG(V)     &kp LG(LS(V))    &none  &kp F1  &kp F2  &kp F3  &kp F12  &none
-                                     &none             &none         &none            &none  &none   &none
+&none  &none           &none         &none             &none         &none    &none  &kp F7  &kp F8  &kp F9  &kp F10  &none
+&none  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_GUI  &none    &none  &kp F4  &kp F5  &kp F6  &kp F11  &none
+&none  &none           &none         &none             &none         &none    &none  &kp F1  &kp F2  &kp F3  &kp F12  &none
+                                     &none             &none         &none    &none  &none   &none
             >;
 
             label = "Fun";
