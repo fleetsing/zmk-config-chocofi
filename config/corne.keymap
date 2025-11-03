@@ -107,13 +107,24 @@
 
         number_layer {
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &none
-&none  &none  &none  &none  &none  &none    &none  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0  &none
-&none  &none  &none  &none  &none  &none    &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &none
-                     &none  &none  &none    &none  &none         &none
+&none  &none           &none         &none             &none         &none    &none  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &none
+&none  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_GUI  &none    &none  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0  &none
+&none  &none           &none         &none             &none         &none    &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &none
+                                     &none             &none         &none    &none  &none         &none
             >;
 
             label = "Num";
+        };
+
+        function_layer {
+            bindings = <
+&none  &none           &none         &none             &none         &none            &none  &kp F7  &kp F8  &kp F9  &kp F10  &none
+&none  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_GUI  &none            &none  &kp F4  &kp F5  &kp F6  &kp F11  &none
+&none  &none           &kp LG(X)     &kp LG(C)         &kp LG(V)     &kp LG(LS(V))    &none  &kp F1  &kp F2  &kp F3  &kp F12  &none
+                                     &none             &none         &none            &none  &none   &none
+            >;
+
+            label = "Fun";
         };
     };
 };
