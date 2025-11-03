@@ -136,6 +136,26 @@
             flavor = "tap-preferred";
             require-prior-idle-ms = <1000>;
         };
+
+        layer_tap_sticky: layer_tap_sticky {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Layer-Tap sticky key";
+            bindings = <&mo>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+        };
+
+        super_shift: super_shift {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Super Shift";
+            #binding-cells = <0>;
+            bindings =
+                <&layer_tap_sticky 4 LEFT_SHIFT>,
+                <&caps_word>,
+                <&kp CAPSLOCK>;
+        };
     };
 
     keymap {
@@ -151,10 +171,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp ESCAPE     &kp Z  &kp G  &kp B  &kp X          &kp W        &kp V  &kp P     &kp Q  &kp LEFT_BRACKET  &none
-&none  &kp A          &kp E  &kp R  &kp T  &kp F          &kp M        &kp S  &kp N     &kp I  &kp O             &none
-&none  &kp SEMICOLON  &kp U  &kp H  &kp L  &kp D          &kp C        &kp J  &kp K     &kp Y  &kp APOSTROPHE    &none
-                             &mo 3  &mo 2  &lt 1 SPACE    &lt 1 ENTER  &mo 4  &kp RALT
+&none  &kp ESCAPE     &kp Z  &kp G  &kp B  &kp X          &kp W        &kp V         &kp P  &kp Q  &kp LEFT_BRACKET  &none
+&none  &kp A          &kp E  &kp R  &kp T  &kp F          &kp M        &kp S         &kp N  &kp I  &kp O             &none
+&none  &kp SEMICOLON  &kp U  &kp H  &kp L  &kp D          &kp C        &kp J         &kp K  &kp Y  &kp APOSTROPHE    &none
+                             &mo 3  &mo 2  &lt 1 SPACE    &lt 1 ENTER  &super_shift  &mo 5
             >;
 
             label = "MacOS";
