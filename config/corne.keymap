@@ -128,12 +128,23 @@
         hold_tap_bluetooth: hold_tap_bluetooth {
             compatible = "zmk,behavior-hold-tap";
             label = "Hold-Tap bluetooth behaviour";
-            bindings = <&bt>, <&bt>;
+            bindings = <&bt>, <&none>;
 
             #binding-cells = <2>;
             tapping-term-ms = <2000>;
             flavor = "tap-preferred";
             require-prior-idle-ms = <1000>;
+        };
+
+        hold_tap_external: hold_tap_external {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Hold-Tap external power behaviour";
+            bindings = <&ext_power>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <2000>;
+            require-prior-idle-ms = <1000>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -213,10 +224,10 @@
 
         board_layer {
             bindings = <
-&none  &none          &none          &none          &none          &ext_power EP_ON     &none  &none  &none  &none  &none  &none
-&none  &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0   &ext_power EP_TOG    &none  &none  &none  &none  &none  &none
-&none  &bt BT_DISC 3  &bt BT_DISC 2  &bt BT_DISC 1  &bt BT_DISC 0  &ext_power EP_OFF    &none  &none  &none  &none  &none  &none
-                                     &none          &none          &none                &none  &none  &none
+&none  &hold_tap_bluetooth BT_CLR_ALL 0  &hold_tap_bluetooth BT_CLR 0  &hold_tap_external EP_OFF 0  &hold_tap_external EP_ON 0  &none            &none  &none  &none  &none  &none  &none
+&none  &bt BT_SEL 4                      &bt BT_SEL 3                  &bt BT_SEL 2                 &bt BT_SEL 1                &bt BT_SEL 0     &none  &none  &none  &none  &none  &none
+&none  &bt BT_DISC 4                     &bt BT_DISC 3                 &bt BT_DISC 2                &bt BT_DISC 1               &bt BT_DISC 0    &none  &none  &none  &none  &none  &none
+                                                                       &none                        &none                       &none            &none  &none  &none
             >;
 
             label = "Board";
