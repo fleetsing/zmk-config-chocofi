@@ -5,6 +5,8 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -90,6 +92,26 @@
             bindings = <&hold_tap_combo RA(NUMBER_7) RA(RIGHT_BRACKET)>;
             key-positions = <18 30>;
         };
+
+        combo_tab {
+            bindings = <&kp TAB>;
+            key-positions = <16 15>;
+        };
+
+        combo_tab_back {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <14 15>;
+        };
+
+        combo_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <19 20>;
+        };
+
+        combo_delete {
+            bindings = <&kp DELETE>;
+            key-positions = <20 21>;
+        };
     };
 
     behaviors {
@@ -101,6 +123,17 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
+        };
+
+        hold_tap_bluetooth: hold_tap_bluetooth {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Hold-Tap bluetooth behaviour";
+            bindings = <&bt>, <&bt>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <2000>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <1000>;
         };
     };
 
@@ -120,7 +153,7 @@
 &none  &kp ESCAPE     &kp Z  &kp G  &kp B  &kp X          &kp W        &kp V  &kp P     &kp Q  &kp LEFT_BRACKET  &none
 &none  &kp A          &kp E  &kp R  &kp T  &kp F          &kp M        &kp S  &kp N     &kp I  &kp O             &none
 &none  &kp SEMICOLON  &kp U  &kp H  &kp L  &kp D          &kp C        &kp J  &kp K     &kp Y  &kp APOSTROPHE    &none
-                             &mo 3  &mo 2  &lt 1 SPACE    &lt 1 ENTER  &mo 0  &kp RALT
+                             &mo 3  &mo 2  &lt 1 SPACE    &lt 1 ENTER  &mo 4  &kp RALT
             >;
 
             label = "MacOS";
@@ -165,6 +198,28 @@
             >;
 
             label = "Fun";
+        };
+
+        media_layer {
+            bindings = <
+&none  &none  &kp C_VOLUME_DOWN  &kp C_MUTE        &kp C_VOLUME_UP  &none            &none  &none     &kp UP    &none      &none  &none
+&none  &none  &kp C_PREVIOUS     &kp K_PLAY_PAUSE  &kp C_NEXT       &none            &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none  &none
+&none  &none  &kp LG(X)          &kp LG(C)         &kp LG(V)        &kp LG(LS(V))    &none  &none     &none     &none      &none  &none
+                                 &none             &none            &none            &none  &none     &none
+            >;
+
+            label = "Media";
+        };
+
+        board_layer {
+            bindings = <
+&none  &none          &none          &none          &none          &ext_power EP_ON     &none  &none  &none  &none  &none  &none
+&none  &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0   &ext_power EP_TOG    &none  &none  &none  &none  &none  &none
+&none  &bt BT_DISC 3  &bt BT_DISC 2  &bt BT_DISC 1  &bt BT_DISC 0  &ext_power EP_OFF    &none  &none  &none  &none  &none  &none
+                                     &none          &none          &none                &none  &none  &none
+            >;
+
+            label = "Board";
         };
     };
 };
