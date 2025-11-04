@@ -193,10 +193,10 @@
             label = "PC";
             display-name = "MacOS";
             bindings = <
-&none  &kp ESCAPE        &kp Z           &kp G           &kp B               &kp X                         &kp W                        &kp V                &kp P            &kp Q            &kp LEFT_BRACKET   &none
-&none  &mt LEFT_SHIFT A  &mt LEFT_ALT E  &mt LEFT_GUI R  &mt LEFT_CONTROL T  &mt LC(LA(LS(LEFT_GUI))) F    &mt RC(RA(RS(RIGHT_GUI))) M  &mt RIGHT_CONTROL S  &mt RIGHT_GUI N  &mt RIGHT_ALT I  &mt RIGHT_SHIFT O  &none
-&none  &kp SEMICOLON     &kp U           &kp H           &kp L               &mt LC(LA(LEFT_GUI)) D        &mt RC(RA(RIGHT_GUI)) C      &kp J                &kp K            &kp Y            &kp APOSTROPHE     &none
-                                         &mo 4           &mo 3               &lt 2 SPACE                   &lt 2 ENTER                  &super_shift         &mo 6
+&none  &kp ESCAPE        &kp Z           &kp G           &kp B                    &kp X                         &kp W                        &kp V                &kp P            &kp Q            &kp LEFT_BRACKET   &none
+&none  &mt LEFT_SHIFT A  &mt LEFT_ALT E  &mt LEFT_GUI R  &mt LEFT_CONTROL T       &mt LC(LA(LS(LEFT_GUI))) F    &mt RC(RA(RS(RIGHT_GUI))) M  &mt RIGHT_CONTROL S  &mt RIGHT_GUI N  &mt RIGHT_ALT I  &mt RIGHT_SHIFT O  &none
+&none  &kp SEMICOLON     &kp U           &kp H           &kp L                    &mt LC(LA(LEFT_GUI)) D        &mt RC(RA(RIGHT_GUI)) C      &kp J                &kp K            &kp Y            &kp APOSTROPHE     &none
+                                         &key_repeat     &tad_dance_number_layer  &lt 2 SPACE                   &lt 2 ENTER                  &super_shift         &mo 6
             >;
         };
 
