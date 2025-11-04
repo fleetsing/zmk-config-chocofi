@@ -257,7 +257,7 @@
 &none  &hold_tap_bluetooth BT_CLR_ALL 0  &hold_tap_bluetooth BT_CLR 0  &out OUT_BLE   &out OUT_USB   &ext_power EP_TOG    &none  &none  &none  &none  &none  &none
 &none  &bt BT_SEL 4                      &bt BT_SEL 3                  &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0         &none  &none  &none  &none  &none  &none
 &none  &bt BT_DISC 4                     &bt BT_DISC 3                 &bt BT_DISC 2  &bt BT_DISC 1  &bt BT_DISC 0        &none  &none  &none  &none  &none  &none
-                                                                       &none          &none          &none                &none  &none  &to 0
+                                                                       &tog 7         &none          &none                &none  &none  &to 0
             >;
 
             label = "Board";
